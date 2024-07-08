@@ -1,0 +1,22 @@
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+
+}
+
+::-webkit-scrollbar-track {
+	background-color: #062439;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #062439;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid white;
+	background-color: #000000;	
+}
