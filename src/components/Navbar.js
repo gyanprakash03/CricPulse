@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <>
-        <div className="flex justify-center items-center gap-[5%] fixed top-0 w-full mx-auto text-[1.3rem] bg-[#00000075] shadow-navBox z-10">
+        <div className="flex sm:justify-center justify-around items-center gap-[5%] fixed top-0 w-full mx-auto text-[1.3rem] bg-[#00000075] shadow-navBox z-10">
             <Link to="/" className='text-[#e6ff43] flex gap-2'>
               <img src='/throw.png' alt='logo' className='w-8'/>
               <div>CricPulse</div>
@@ -43,17 +43,17 @@ const Navbar = () => {
 
             <NavLink to="/recent"
             className={({ isActive }) =>
-              `cursor-pointer h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
+              `cursor-pointer hidden sm:block h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
             }>Recent</NavLink>
 
             <NavLink to="/" 
             className={({ isActive }) =>
-              `cursor-pointer h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
+              `cursor-pointer hidden sm:block h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
             }>Live</NavLink>
 
             <NavLink to="/upcoming" 
             className={({ isActive }) =>
-              `cursor-pointer h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
+              `cursor-pointer hidden sm:block h-full py-3 px-1 ${isActive ? 'border-b-4 border-yellow-500' : ''}`
             }>Upcoming</NavLink>
 
             <div className='relative'>
@@ -63,19 +63,38 @@ const Navbar = () => {
               
               {
                 showOptions ? (
-                  <div className='absolute top-14 -left-16 bg-[#000000b3] rounded-md py-2'>
+                  <div className='absolute md:top-14 right-0 bg-[#000000b3] rounded-md py-2'>
+
+                    <div className='flex gap-3 px-4 py-2 hover:text-yellow-300 sm:hidden'>
+                      <IoPerson className='mt-1'/>
+                      <Link to="/" className='whitespace-nowrap'>Live</Link>
+                    </div>
+
+                    <div className='flex gap-3 px-4 py-2 hover:text-yellow-300 sm:hidden'>
+                      <IoPerson className='mt-1'/>
+                      <Link to="/recent" className='whitespace-nowrap'>Recent</Link>
+                    </div>
+
+                    <div className='flex gap-3 px-4 py-2 hover:text-yellow-300 sm:hidden'>
+                      <IoPerson className='mt-1'/>
+                      <Link to="/upcoming" className='whitespace-nowrap'>Upcoming</Link>
+                    </div>
+
                     <div className='flex gap-3 px-4 py-2 hover:text-yellow-300'>
                       <IoPerson className='mt-1'/>
                       <Link to="/players" className='whitespace-nowrap'>Player Search</Link>
                     </div>
+
                     <div className='flex gap-3 px-4 py-2 hover:text-yellow-300'>
                       <RiTeamFill className='mt-1'/>
                       <Link to="/rankings/men" className='whitespace-nowrap'>ICC Rankings</Link>
                     </div>
+                    
                     <div className='flex gap-3 px-4 py-2 hover:text-yellow-300'>
                       <IoLogoGithub className='mt-1'/>
-                      <div className='whitespace-nowrap'>GitHub Repo</div>
+                      <Link to="https://github.com/gyanprakash03/CricPulse" target='_blank' className='whitespace-nowrap'>GitHub Repo</Link>
                     </div>
+
                     <div className='flex gap-3 px-4 py-2 hover:text-yellow-300'>
                       <IoCall className='mt-1'/>
                       <Link to="/contact-me" className='whitespace-nowrap'>Contact Me</Link>

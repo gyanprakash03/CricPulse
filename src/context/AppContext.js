@@ -9,8 +9,11 @@ const AppContextProvider = ({ children }) => {
   const [matchList, setMatchList] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [prevStatus, setPrevStatus] = useState("");
 
   async function fetchData(matchStatus) {
+    if (matchStatus === prevStatus) return;
+    setPrevStatus(matchStatus);
     setLoading(true);
     let url = `${baseurl}/${matchStatus}`;
 

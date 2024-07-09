@@ -75,7 +75,7 @@ const PlayerSearch = () => {
 
             <button onClick={() => fetchPlayerSearch(inputValue)} className='border-2 rounded-full p-2  hover:border-yellow-300 hover:text-yellow-300 transition duration-300'><IoSearch /></button>
 
-            <button onClick={xbuttonHandler} className={`hover:text-yellow-300 rounded-full p-1 absolute right-[22rem] ${showXMark ? "inline" : "hidden"}`}><HiMiniXMark className='text-[1.6rem]'/></button>
+            <button onClick={xbuttonHandler} className={`hover:text-yellow-300 rounded-full p-1 absolute lg:right-[22rem] md:right-[32%] right-[28%] ${showXMark ? "inline" : "hidden"}`}><HiMiniXMark className='text-[1.6rem]'/></button>
         </div>
         
         {

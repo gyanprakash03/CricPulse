@@ -128,7 +128,7 @@ const Match = () => {
                     <div className='flex items-center justify-evenly mt-6 border-t py-8'>
                         <div className='flex flex-col items-center'>
 
-                            <div className='text-[1.6rem] font-semibold text-red-400'>{scoreCard?.[0]?.batTeamDetails?.batTeamName}</div>
+                            <div className='text-[1.6rem] text-center font-semibold text-red-400'>{scoreCard?.[0]?.batTeamDetails?.batTeamName}</div>
                             <div className='text-[1.4rem]'>{scoreCard?.[0]?.scoreDetails?.runs ? `${scoreCard?.[0]?.scoreDetails?.runs}/${scoreCard?.[0]?.scoreDetails?.wickets}` : "Yet to Bat"}</div>
 
                             <div className='text-[1.2rem] text-slate-400'>{scoreCard?.[0]?.scoreDetails?.overs ? `(${scoreCard?.[0]?.scoreDetails?.overs})` : "---"}</div>
@@ -138,7 +138,7 @@ const Match = () => {
 
                         <div className='flex flex-col items-center'>
 
-                            <div className='text-[1.6rem] font-semibold text-red-400'>{scoreCard?.[1]?.batTeamDetails?.batTeamName}</div>
+                            <div className='text-[1.6rem] text-center font-semibold text-red-400'>{scoreCard?.[1]?.batTeamDetails?.batTeamName}</div>
                             <div className='text-[1.4rem]'>{scoreCard?.[1]?.scoreDetails?.runs ? `${scoreCard?.[1]?.scoreDetails?.runs}/${scoreCard?.[1]?.scoreDetails?.wickets}` : "Yet to Bat"}</div>
 
                             <div className='text-[1.2rem] text-slate-400'>{scoreCard?.[1]?.scoreDetails?.overs ? `(${scoreCard?.[1]?.scoreDetails?.overs})` : "---"}</div>
@@ -164,13 +164,21 @@ const Match = () => {
                     {showInnings1 ? (
                         <div className='mt-2'>
                             <div className='flex w-full text-[1.2rem] border-b text-blue-400'>
-                                <div className='w-[35%] text-center p-2'>Batsman name</div>
+                                <div className='w-[35%] text-center p-2 hidden sm:block'>Batsman name</div>
+                                <div className='w-[35%] text-center p-2 sm:hidden'>Batsman</div>
+
                                 <div className='flex w-[65%] justify-around p-2 text-center'>
-                                    <div className='w-[20%]'>Runs</div>
-                                    <div className='w-[20%]'>Balls</div>
-                                    <div className='w-[20%]'>Fours</div>
-                                    <div className='w-[20%]'>Sixes</div>
-                                    <div className='w-[20%]'>SR</div>
+                                    <div className='w-[20%] hidden sm:block'>Runs</div>
+                                    <div className='w-[20%] hidden sm:block'>Balls</div>
+                                    <div className='w-[20%] hidden sm:block'>Fours</div>
+                                    <div className='w-[20%] hidden sm:block'>Sixes</div>
+                                    <div className='w-[20%] hidden sm:block'>SR</div>
+
+                                    <div className='w-[20%] sm:hidden'>R</div>
+                                    <div className='w-[20%] sm:hidden'>B</div>
+                                    <div className='w-[20%] sm:hidden'>4s</div>
+                                    <div className='w-[20%] sm:hidden'>6s</div>
+                                    <div className='w-[20%] sm:hidden'>SR</div>
                                 </div>
                             </div>
 
@@ -198,13 +206,20 @@ const Match = () => {
                             </div>
 
                             <div className='flex w-full text-[1.2rem] border-b mt-2 text-blue-400'>
-                                <div className='w-[35%] text-center p-2'>Bowler name</div>
+                                <div className='w-[35%] text-center p-2 hidden sm:block'>Bowler name</div>
+                                <div className='w-[35%] text-center p-2 sm:hidden'>Bowler</div>
                                 <div className='flex w-[65%] justify-around p-2 text-center'>
-                                    <div className='w-[20%]'>Overs</div>
-                                    <div className='w-[20%]'>Maidens</div>
-                                    <div className='w-[20%]'>Wickets</div>
-                                    <div className='w-[20%]'>Runs</div>
-                                    <div className='w-[20%]'>Eco</div>
+                                    <div className='w-[20%] hidden sm:block'>Overs</div>
+                                    <div className='w-[20%] hidden sm:block'>Maidens</div>
+                                    <div className='w-[20%] hidden sm:block'>Wickets</div>
+                                    <div className='w-[20%] hidden sm:block'>Runs</div>
+                                    <div className='w-[20%] hidden sm:block'>Eco</div>
+
+                                    <div className='w-[20%] sm:hidden'>O</div>
+                                    <div className='w-[20%] sm:hidden'>M</div>
+                                    <div className='w-[20%] sm:hidden'>W</div>
+                                    <div className='w-[20%] sm:hidden'>R</div>
+                                    <div className='w-[20%] sm:hidden'>Eco</div>
                                 </div>
                             </div>
 
@@ -267,13 +282,21 @@ const Match = () => {
                     ) : showInnings2 ? (
                         <div className='mt-2'>
                             <div className='flex w-full text-[1.2rem] border-b text-blue-400'>
-                                <div className='w-[35%] text-center p-2'>Batsman name</div>
+                                <div className='w-[35%] text-center p-2 hidden sm:block'>Batsman name</div>
+                                <div className='w-[35%] text-center p-2 sm:hidden'>Batsman</div>
+
                                 <div className='flex w-[65%] justify-around p-2 text-center'>
-                                    <div className='w-[20%]'>Runs</div>
-                                    <div className='w-[20%]'>Balls</div>
-                                    <div className='w-[20%]'>Fours</div>
-                                    <div className='w-[20%]'>Sixes</div>
-                                    <div className='w-[20%]'>SR</div>
+                                    <div className='w-[20%] hidden sm:block'>Runs</div>
+                                    <div className='w-[20%] hidden sm:block'>Balls</div>
+                                    <div className='w-[20%] hidden sm:block'>Fours</div>
+                                    <div className='w-[20%] hidden sm:block'>Sixes</div>
+                                    <div className='w-[20%] hidden sm:block'>SR</div>
+
+                                    <div className='w-[20%] sm:hidden'>R</div>
+                                    <div className='w-[20%] sm:hidden'>B</div>
+                                    <div className='w-[20%] sm:hidden'>4s</div>
+                                    <div className='w-[20%] sm:hidden'>6s</div>
+                                    <div className='w-[20%] sm:hidden'>SR</div>
                                 </div>
                             </div>
 
@@ -301,13 +324,20 @@ const Match = () => {
                             </div>
 
                             <div className='flex w-full text-[1.2rem] border-b mt-2 text-blue-400'>
-                                <div className='w-[35%] text-center p-2'>Bowler name</div>
+                                <div className='w-[35%] text-center p-2 hidden sm:block'>Bowler name</div>
+                                <div className='w-[35%] text-center p-2 sm:hidden'>Bowler</div>
                                 <div className='flex w-[65%] justify-around p-2 text-center'>
-                                    <div className='w-[20%]'>Overs</div>
-                                    <div className='w-[20%]'>Maidens</div>
-                                    <div className='w-[20%]'>Wickets</div>
-                                    <div className='w-[20%]'>Runs</div>
-                                    <div className='w-[20%]'>Eco</div>
+                                    <div className='w-[20%] hidden sm:block'>Overs</div>
+                                    <div className='w-[20%] hidden sm:block'>Maidens</div>
+                                    <div className='w-[20%] hidden sm:block'>Wickets</div>
+                                    <div className='w-[20%] hidden sm:block'>Runs</div>
+                                    <div className='w-[20%] hidden sm:block'>Eco</div>
+
+                                    <div className='w-[20%] sm:hidden'>O</div>
+                                    <div className='w-[20%] sm:hidden'>M</div>
+                                    <div className='w-[20%] sm:hidden'>W</div>
+                                    <div className='w-[20%] sm:hidden'>R</div>
+                                    <div className='w-[20%] sm:hidden'>Eco</div>
                                 </div>
                             </div>
 

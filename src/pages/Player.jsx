@@ -65,20 +65,20 @@ const Player = () => {
 
                     <div className='text-center text-[1.6rem] border-y py-1 text-yellow-300'>Information</div>
 
-                    <div className='w-full flex text-[1.2rem] py-5'>
-                        <div className='text-right w-1/2'>
-                            <div className='border-r border-slate-500 pr-[15%] w-full'>Date of Birth</div>
-                            <div className='border-r border-slate-500 pr-[15%] w-full'>Birth Place</div>
-                            <div className='border-r border-slate-500 pr-[15%] w-full'>Role</div>
-                            <div className='border-r border-slate-500 pr-[15%] w-full'>Batting style</div>
-                            <div className='border-r border-slate-500 pr-[15%] w-full'>Bowling style</div>
+                    <div className='w-full flex text-[1.2rem] py-5 h-80 sm:h-fit'>
+                        <div className='text-right w-1/2 h-full'>
+                            <div className='border-r border-slate-500 pr-[15%] w-full h-[20%]'>Date of Birth</div>
+                            <div className='border-r border-slate-500 pr-[15%] w-full h-[20%]'>Birth Place</div>
+                            <div className='border-r border-slate-500 pr-[15%] w-full h-[20%]'>Role</div>
+                            <div className='border-r border-slate-500 pr-[15%] w-full h-[20%]'>Batting style</div>
+                            <div className='border-r border-slate-500 pr-[15%] w-full h-[20%]'>Bowling style</div>
                         </div>
-                        <div className='w-1/2'>
-                            <div className='border-l border-slate-500 pl-[15%] w-full'>{playerData?.DoB}</div>
-                            <div className='border-l border-slate-500 pl-[15%] w-full'>{playerData?.birthPlace}</div>
-                            <div className='border-l border-slate-500 pl-[15%] w-full'>{playerData?.role}</div>
-                            <div className='border-l border-slate-500 pl-[15%] w-full'>{playerData?.bat}</div>
-                            <div className='border-l border-slate-500 pl-[15%] w-full'>{playerData?.bowl}</div>
+                        <div className='w-1/2 h-full'>
+                            <div className='border-l border-slate-500 pl-[15%] w-full h-[20%]'>{playerData?.DoB}</div>
+                            <div className='border-l border-slate-500 pl-[15%] w-full h-[20%]'>{playerData?.birthPlace}</div>
+                            <div className='border-l border-slate-500 pl-[15%] w-full h-[20%]'>{playerData?.role}</div>
+                            <div className='border-l border-slate-500 pl-[15%] w-full h-[20%]'>{playerData?.bat}</div>
+                            <div className='border-l border-slate-500 pl-[15%] w-full h-[20%]'>{playerData?.bowl}</div>
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@ const Player = () => {
                     <div className='flex flex-wrap justify-center items-center text-center py-4 text-[1.2rem]'>
                         {
                             playerData?.teams?.split(",").map((team, index) => (
-                                <div key={index} className='w-1/3 py-2'>{team}</div>
+                                <div key={index} className='md:w-1/3 sm:w-1/2 w-full py-2'>{team}</div>
                             ))
                         }
                     </div>
@@ -95,12 +95,12 @@ const Player = () => {
 
                     {
                         fullBio ? (
-                            <div className='py-4 text-[1.2rem]'>
+                            <div className='py-4 text-[1.2rem] sm:text-left text-center'>
                                 <div dangerouslySetInnerHTML={{ __html: playerData?.bio }} />
                                 <button onClick={() => setFullBio(false)} className='font-semibold text-center w-full text-red-400 hover:text-red-600 py-2 underline'>Collapse</button>
                             </div>
                         ) : (
-                            <div className='py-4 text-[1.2rem]'>
+                            <div className='py-4 text-[1.2rem] sm:text-left text-center'>
                                 <div dangerouslySetInnerHTML={{ __html: playerData?.bio?.slice(0, 500) + '...' }} />
                                 <button onClick={() => setFullBio(true)} className='font-semibold text-center w-full text-red-400 hover:text-red-600 py-2 underline'>Expand</button>
                             </div>

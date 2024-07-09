@@ -77,7 +77,7 @@ const Rankings = () => {
 
         <div className='text-center text-[1.4rem] text-yellow-300'>Select Category</div>
 
-        <div className='flex justify-around text-[1.2rem] my-3'>
+        <div className='flex flex-col items-center sm:flex-row text-center gap-4 sm:justify-around text-[1.2rem] my-3'>
 
           <div onClick={() => setCategory("batsmen")} 
           className={`py-1 px-3 cursor-pointer border border-yellow-300 rounded-md ${category === "batsmen" ? "bg-yellow-300 text-black" : ""}`}>Batsman</div>
@@ -101,7 +101,7 @@ const Rankings = () => {
       {
         loading ? <Loader/> : invalid ? <div className='text-center text-yellow-300 text-[1.2rem]'>Select a Format and Category</div> : apiCalled ? ( category === "teams" ? 
           <div className='bg-[#00000080] rounded-md py-2 px-4 mt-4'>
-            <div className='flex w-full border-b py-2 text-[1.3rem] text-center'>
+            <div className='flex w-full border-b py-2 text-base sm:text-[1.3rem] text-center'>
               <div className='w-[25%]'>Rank</div>
               <div className='w-[25%]'>Player Name</div>
               <div className='w-[25%]'>Points</div>
@@ -110,7 +110,7 @@ const Rankings = () => {
 
             {
               rankingData?.rank?.map((ranking) => (
-                <div key={ranking?.id} className='flex border-b border-slate-600 py-2 text-[1.2rem] text-center'>
+                <div key={ranking?.id} className='flex border-b border-slate-600 py-2 text-base sm:text-[1.2rem] text-center'>
                   <div className='w-[25%]'>{ranking?.rank}</div>
                   <Link to={`/players/${ranking?.id}`} className='w-[25%] hover:underline hover:text-yellow-300'>{ranking?.name}</Link>
                   <div className='w-[25%]'>{ranking?.points}</div>
@@ -120,7 +120,7 @@ const Rankings = () => {
             }
           </div> : 
           <div className='bg-[#00000080] rounded-md py-2 px-4 mt-4'>
-            <div className='flex w-full border-b py-2 text-[1.3rem] text-center'>
+            <div className='flex w-full border-b py-2 text-base sm:text-[1.3rem] text-center'>
               <div className='w-[25%]'>Rank</div>
               <div className='w-[25%]'>Player Name</div>
               <div className='w-[25%]'>Country</div>
@@ -129,7 +129,7 @@ const Rankings = () => {
 
             {
               rankingData?.rank?.map((ranking) => (
-                <div key={ranking?.id} className='flex border-b border-slate-600 py-2 text-[1.2rem] text-center'>
+                <div key={ranking?.id} className='flex border-b border-slate-600 py-2 text-base sm:text-[1.2rem] text-center'>
                   <div className='w-[25%]'>{ranking?.rank}</div>
                   <Link to={`/players/${ranking?.id}`} className='w-[25%] hover:underline hover:text-yellow-300'>{ranking?.name}</Link>
                   <div className='w-[25%]'>{ranking?.country}</div>
