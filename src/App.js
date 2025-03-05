@@ -13,10 +13,11 @@ import ContactMe from "./pages/ContactMe";
 function App() {
   return (
     <div className="box-border h-full w-full font-changa relative text-white m-0 p-0 pt-16 overflow-y-hidden ">
-      <video className="fixed -z-10 inset-0 h-full w-full object-cover" autoPlay loop muted>
+      {/* <video className="fixed -z-10 inset-0 h-full w-full object-cover" autoPlay loop muted>
         <source src="/Network-background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <img src="/bg-1.jpg" alt="background" className="fixed -z-10 inset-0 h-full w-full object-cover"/>
       <Routes>
         <Route path="/" element = {<Navbar/>}>
           <Route index element = {<Live/>} />
